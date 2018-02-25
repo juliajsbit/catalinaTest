@@ -5,6 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-    <h>Hello</h>
+<h>Hello</h>
+<br>
+<a href="/hello">Go to other page</a>
 </body>
 </html>

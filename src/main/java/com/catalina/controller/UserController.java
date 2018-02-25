@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequestMapping("/")
 public class UserController {
 
+    @GetMapping("/")
+    public String index(){
+        return "index";
+    }
+
     @GetMapping("/hello")
     public String hello(){
         return "hello";
