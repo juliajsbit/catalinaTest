@@ -1,10 +1,7 @@
 package com.catalina.config;
 
-import com.catalina.dao.UserDao;
-import com.catalina.dao.UserDaoImpl;
-import com.catalina.service.UserService;
-import com.catalina.service.UserServiceImpl;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -12,6 +9,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 
 @Configuration
+@ComponentScan(basePackages = {"com.catalina.service", "com.catalina.dao"})
 public class SpringConfig {
 
     @Bean
@@ -29,7 +27,8 @@ public class SpringConfig {
         return dataSource;
     }
 
-    @Bean
+    //ComponentScan
+    /*@Bean
     public UserDao getUserDao() {
         return new UserDaoImpl(getJdbcTemplate());
     }
@@ -37,5 +36,5 @@ public class SpringConfig {
     @Bean
     public UserService getUserService() {
         return new UserServiceImpl();
-    }
+    }*/
 }
